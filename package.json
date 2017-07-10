@@ -1,0 +1,8 @@
+{
+  "name": "glia",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "./scripts/build.sh",
+    "clean": "rm -rf ./build"
+  }
+}
