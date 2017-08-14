@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package glia.common.proto;
+
+service Server {
+    rpc gossip(Request) returns (Reply) {}
+    rpc status(Request) returns (Reply) {}
+}
+
+message Request {
+    string message = 1;
+}
+
+message Reply {
+    string message = 1;
+}
