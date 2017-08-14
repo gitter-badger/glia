@@ -2,7 +2,9 @@
   "name": "glia",
   "version": "0.0.1",
   "scripts": {
+    "make": "./scripts/make.sh",
     "build": "./scripts/build.sh",
+    "rebuild": "npm run clean && ./scripts/build.sh",
     "clean": "rm -rf ./build"
   }
 }

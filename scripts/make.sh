@@ -18,19 +18,11 @@ parser.add_argument(
     choices=['Debug','Release', 'RelWithDebInfo', 'MinSizeRel'],
     help='choose the compilation build type. [Debug]'
 )
-parser.add_argument(
-    '--target',
-    metavar='',
-    default='',
-    help='choose the compilation build type. ['']'
-)
 args = parser.parse_args()
 
 print('CMAKE_BUILD_TYPE="%s";' % args.cmake_build_type)
-print('TARGET="%s";' % args.target)
 EOF
 `
 eval ${args}
 
 cmake -H. -Bbuild/${CMAKE_BUILD_TYPE}/ -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-cmake --build build/${CMAKE_BUILD_TYPE}/ --target ${TARGET} -- -j4
